@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jane Doe</title>
+
+  <!-- Do not encourage indexing -->
+  <meta name="robots" content="noindex, nofollow">
+
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #ffffff;
+      color: #111;
+      max-width: 420px;
+      margin: 3rem auto;
+      padding: 1.5rem;
+      line-height: 1.5;
+    }
+    h1 {
+      font-size: 1.6rem;
+      margin-bottom: 0.25rem;
+    }
+    .org {
+      color: #555;
+      margin-bottom: 1.5rem;
+    }
+    .button {
+      display: block;
+      width: 100%;
+      padding: 0.9rem;
+      margin: 0.75rem 0;
+      text-align: center;
+      border: 1px solid #000;
+      background: #000;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+    .secondary {
+      background: #fff;
+      color: #000;
+    }
+    .small {
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Jane Doe</h1>
+  <div class="org">Example Organization</div>
+
+  <!-- Explicit user action -->
+  <a class="button" href="nick_lubecki.vcf">
+    Add to Contacts
+  </a>
+
+  <!-- Phone shown intentionally (optional) -->
+  <a class="button secondary" href="tel:+14129695657">
+    Call Jane
+  </a>
+
+  <!-- Email revealed only after interaction -->
+  <button class="button secondary" id="revealEmail">
+    Show Email
+  </button>
+
+  <div id="email" class="small" style="display:none;"></div>
+
+  <script>
+    document.getElementById("revealEmail").addEventListener("click", function () {
+      var user = "nicholu";
+      var domain = "gmail.com";
+      var email = user + "@" + domain;
+
+      var el = document.getElementById("email");
+      el.textContent = email;
+      el.style.display = "block";
+
+      this.style.display = "none";
+    });
+  </script>
+
+  <div class="small">
+    This page does not use analytics, cookies, or tracking.
+  </div>
+
+</body>
+</html>
