@@ -3,12 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nick Lubecki</title>
+  <title>Jane Doe</title>
 
-  <!-- Do not encourage indexing -->
   <meta name="robots" content="noindex, nofollow">
 
   <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
       background: #ffffff;
@@ -18,55 +21,64 @@
       padding: 1.5rem;
       line-height: 1.5;
     }
+
     h1 {
       font-size: 1.6rem;
-      margin-bottom: 0.25rem;
+      margin: 0 0 0.25rem 0;
     }
+
     .org {
       color: #555;
       margin-bottom: 1.5rem;
     }
+
     .button {
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       width: 100%;
       padding: 0.9rem;
       margin: 0.75rem 0;
-      text-align: center;
+      border-radius: 6px;
       border: 1px solid #000;
       background: #000;
       color: #fff;
       text-decoration: none;
-      border-radius: 6px;
       font-size: 1rem;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
     }
-    .secondary {
+
+    .button.secondary {
       background: #fff;
       color: #000;
     }
+
     .small {
       font-size: 0.85rem;
       color: #666;
       margin-top: 1.5rem;
+      text-align: center;
     }
   </style>
 </head>
 <body>
 
-  <h1>Nick Lubecki</h1>
-  <div class="org">Coldco Farm</div>
+  <h1>Jane Doe</h1>
+  <div class="org">Example Organization</div>
 
-  <!-- Explicit user action -->
-  <a class="button" href="nick_lubecki.vcf">
+  <!-- vCard -->
+  <a class="button" href="jane-doe.vcf">
     Add to Contacts
   </a>
 
-  <!-- Phone shown intentionally (optional) -->
-  <a class="button secondary" href="tel:+14129695657">
-    Call Nick
+  <!-- Phone -->
+  <a class="button secondary" href="tel:+15551234567">
+    Call Jane
   </a>
 
-  <!-- Email revealed only after interaction -->
-  <button class="button secondary" id="revealEmail">
+  <!-- Email reveal -->
+  <button class="button secondary" id="revealEmail" type="button">
     Show Email
   </button>
 
@@ -74,8 +86,8 @@
 
   <script>
     document.getElementById("revealEmail").addEventListener("click", function () {
-      var user = "nicholu";
-      var domain = "gmail.com";
+      var user = "jane.contact";
+      var domain = "example.org";
       var email = user + "@" + domain;
 
       var el = document.getElementById("email");
@@ -87,7 +99,7 @@
   </script>
 
   <div class="small">
-    This page does not use analytics, cookies, or tracking.
+    No analytics. No tracking. No cookies.
   </div>
 
 </body>
