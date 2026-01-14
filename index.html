@@ -94,37 +94,36 @@
     Instagram
   </a>
   
-<!-- Email reveal -->
-<button class="button secondary" id="revealEmail" type="button">
-  Show Email
-</button>
+  <!-- Email reveal -->
+  <button class="button secondary" id="revealEmail" type="button">Show Email</button>
+  <div id="emailContainer" style="display:none;"></div>
 
-<div id="email" style="display:none;"></div>
+  <script>
+    const revealBtn = document.getElementById('revealEmail');
+    const emailContainer = document.getElementById('emailContainer');
 
-<script>
-document.getElementById("revealEmail").addEventListener("click", function () {
-  var user = "nicholu";
-  var domain = "gmail.com";
-  var email = user + "@" + domain;
+    revealBtn.addEventListener('click', () => {
+      const user = 'email';
+      const domain = 'gmail.com';
+      const email = `${user}@${domain}`;
 
-  // Create a mailto link
-  var link = document.createElement('a');
-  link.href = "mailto:" + email;
-  link.textContent = email;
+      // Clear container in case of multiple clicks
+      emailContainer.innerHTML = '';
 
-  // Apply the same button classes for styling
-  link.className = "button secondary";
+      // Create a proper mailto link
+      const mailLink = document.createElement('a');
+      mailLink.href = `mailto:${email}`;
+      mailLink.textContent = email;
+      mailLink.className = 'button secondary';
 
-  var el = document.getElementById("email");
-  // Clear any previous content just in case
-  el.innerHTML = '';
-  el.appendChild(link);
-  el.style.display = "block";
+      // Append to container
+      emailContainer.appendChild(mailLink);
+      emailContainer.style.display = 'block';
 
-  // Hide the "Show Email" button
-  this.style.display = "none";
-});
-</script>
+      // Hide reveal button
+      revealBtn.style.display = 'none';
+    });
+  </script>
 
   <div class="small">
     No analytics. No tracking. No cookies.
