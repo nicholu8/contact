@@ -94,26 +94,37 @@
     Instagram
   </a>
   
-  <!-- Email reveal -->
-  <button class="button secondary" id="revealEmail" type="button">
-    Show Email
-  </button>
-  
-  <div id="email" class="button secondary" style="display:none;"></div>
+<!-- Email reveal -->
+<button class="button secondary" id="revealEmail" type="button">
+  Show Email
+</button>
 
-  <script>
-    document.getElementById("revealEmail").addEventListener("click", function () {
-      var user = "nicholu";
-      var domain = "gmail.com";
-      var email = user + "@" + domain;
+<div id="email" style="display:none;"></div>
 
-      var el = document.getElementById("email");
-      el.textContent = email;
-      el.style.display = "block";
+<script>
+document.getElementById("revealEmail").addEventListener("click", function () {
+  var user = "nicholu";
+  var domain = "gmail.com";
+  var email = user + "@" + domain;
 
-      this.style.display = "none";
-    });
-  </script>
+  // Create a mailto link
+  var link = document.createElement('a');
+  link.href = "mailto:" + email;
+  link.textContent = email;
+
+  // Apply the same button classes for styling
+  link.className = "button secondary";
+
+  var el = document.getElementById("email");
+  // Clear any previous content just in case
+  el.innerHTML = '';
+  el.appendChild(link);
+  el.style.display = "block";
+
+  // Hide the "Show Email" button
+  this.style.display = "none";
+});
+</script>
 
   <div class="small">
     No analytics. No tracking. No cookies.
