@@ -22,6 +22,15 @@
       line-height: 1.5;
     }
 
+        .header {
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  align-items: center;    /* horizontal centering */
+  justify-content: center; /* vertical centering within container if needed */
+  text-align: center;      /* ensures text inside h1 and org is centered */
+  margin-bottom: 1.5rem;  /* spacing below header */
+}
+
     h1 {
       font-size: 1.6rem;
       margin: 0 0 0.25rem 0;
@@ -65,8 +74,10 @@
 </head>
 <body>
 
+  <div class="header">
   <h1>Nick Lubecki</h1>
   <div class="org">COLDCO FARM</div>
+  </div>
 
   <!-- vCard -->
   <a class="button" href="nick-lubecki.vcf">
